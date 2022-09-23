@@ -340,8 +340,8 @@ class Train:
 DatasetOperation.dataset_train_test_split("test/dataset/images","test/split_dataset")
 DatasetOperation.coco_format_annotation_control("test/dataset/annotations")
 DatasetOperation.coco_format_split_for_train_test_data("test/dataset/annotations","test/testdataset/")
-DatasetOperation.create_tf_record_file_for_coco_format("test/dataset/test.json","test/dataset/test","test/testdataset/test.record")
-DatasetOperation.create_tf_record_file_for_coco_format("test/dataset/train.json","test/dataset/train","test/testdataset/train.record")
+DatasetOperation.create_tf_record_file_for_coco_format("test/testdataset/test.json","test/testdataset/test","test/testdataset/test.record")
+DatasetOperation.create_tf_record_file_for_coco_format("test/testdataset/train.json","test/testdataset/train","test/testdataset/train.record")
 
 
 
