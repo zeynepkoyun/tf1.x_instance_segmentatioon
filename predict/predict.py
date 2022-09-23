@@ -14,8 +14,6 @@ import matplotlib.pyplot as plt
 
 from PIL import ImageFont, ImageDraw, Image
 
-# sys.path.append("C:\\Django_Project\\object_detection\\object_detection_library\\tensor_object_detection\\object_detection")
-# os.chdir( 'C:\\Django_Project\\object_detection\\object_detection_library\\tensor_object_detection\\object_detection' )
 from post_pre_process import PreProcess as utils_ops
 from post_pre_process import PostProcess as vis_util
 
@@ -135,15 +133,10 @@ class Detection_Results():
 
 
 
-# frozen_pb_path="/home/zeynep/Desktop/deneme/frozen_inference_graph.pb"
-frozen_pb_path="/media/zeynep/data/TicketSystem/visio/200bin/frozen_inference_graph.pb"
-label_map_path ="/media/zeynep/data/TicketSystem/visio/testdataset/label.pbtxt"
-# query_image_path="/media/zeynep/data/TicketSystem/visio/testdataset/train/20678.jpeg"
-# query_image_path="/media/zeynep/data/TicketSystem/visio/testdataset/train/20684.jpeg"
-# query_image_path="/media/zeynep/data/TicketSystem/visio/testdataset/test/VID_2021_08_11_10_16_27_21_08_11_11_37_41_output_059.jpg"
-# query_image_path="/media/zeynep/data/TicketSystem/visio/testdataset/test/VID_2021_09_29_11_02_26_21_10_01_00_22_45_output_874.jpg"
-query_image_path="/home/zeynep/Downloads/dene1.jpeg"
+frozen_pb_path="../re_pretrain_model/frozen_inference_graph.pb"
+label_map_path ="../re_pretrain_model/label.pbtxt"
+query_image_path="..predict_image/dene1.jpeg"
 
 max_num_classes_number=2
-detection_results_image_path="/media/zeynep/data/TicketSystem/visio/result"
+detection_results_image_path="../predict_image_response"
 Detection_Results(frozen_pb_path,label_map_path,query_image_path,max_num_classes_number,detection_results_image_path).detection_results_create()
