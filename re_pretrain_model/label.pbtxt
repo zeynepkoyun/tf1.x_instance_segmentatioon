@@ -1,0 +1,8 @@
+item {
+  name: "Information plate"
+  id: 1
+}
+item {
+  name: "Shop Sign"
+  id: 2
+}
