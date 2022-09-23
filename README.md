@@ -1,4 +1,5 @@
 #tf1.x_instance_segmentatioon
+
 Projede kullanılan segmentasyon modeli tensorflow 1.x Object Detection API'sine ait mask_rcnn_inception_v2_coco_2018_01_28 modelidir. Modeli kulllanırken "https://github.com/tensorflow/models" github adresinden object detection kütüphanesinide kod içerisine dahil etmelisiniz.
 
 Dizin Detayları:
