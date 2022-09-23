@@ -5,8 +5,7 @@ import numpy as np
 from PIL import Image
 from pycocotools import mask
 
-os.environ.setdefault("PYTHONPATH", "/media/zeynep/data/TicketSystem/object/object_detection_library/tensorflow/models/research:"
-                                        "/media/zeynep/data/TicketSystem/object/object_detection_library/tensorflow/models/research/slim")
+os.environ.setdefault("PYTHONPATH", "tensorflow/models/research:tensorflow/models/research/slim")
 from object_detection.utils import dataset_util
 from object_detection.utils import label_map_util
 
@@ -333,16 +332,16 @@ class Train:
     def train():
         command = "python " \
                   + os.path.join("object_detection", "legacy", "train.py") \
-                  + " --gpuNums={} --train_dir={}/ --pipeline_config_path={}".format(0,"/media/zeynep/data/TicketSystem/visio/mask_rcnn_inception_v2_coco_2018_01_28",
-                                                                                     "/media/zeynep/data/TicketSystem/visio/mask_rcnn_inception_v2_coco_2018_01_28/pipeline.config")
+                  + " --gpuNums={} --train_dir={}/ --pipeline_config_path={}".format(0,"test/mask_rcnn_inception_v2_coco_2018_01_28",
+                                                                                     "test/mask_rcnn_inception_v2_coco_2018_01_28/pipeline.config")
 
         subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-DatasetOperation.dataset_train_test_split("/media/zeynep/data/TicketSystem/visio/dataset/images","/media/zeynep/data/TicketSystem/visio/split_dataset")
-DatasetOperation.coco_format_annotation_control("/media/zeynep/data/TicketSystem/visio/dataset/annotations")
-DatasetOperation.coco_format_split_for_train_test_data("/media/zeynep/data/TicketSystem/visio/dataset/annotations","/media/zeynep/data/TicketSystem/visio/testdataset")
-DatasetOperation.create_tf_record_file_for_coco_format("/media/zeynep/data/TicketSystem/visio/testdataset/test.json","/media/zeynep/data/TicketSystem/visio/testdataset/test","/media/zeynep/data/TicketSystem/visio/testdataset/test.record")
-DatasetOperation.create_tf_record_file_for_coco_format("/media/zeynep/data/TicketSystem/visio/testdataset/train.json","/media/zeynep/data/TicketSystem/visio/testdataset/train","/media/zeynep/data/TicketSystem/visio/testdataset/train.record")
+DatasetOperation.dataset_train_test_split("test/dataset/images","test/split_dataset")
+DatasetOperation.coco_format_annotation_control("test/dataset/annotations")
+DatasetOperation.coco_format_split_for_train_test_data("test/dataset/annotations","test/testdataset/")
+DatasetOperation.create_tf_record_file_for_coco_format("test/dataset/test.json","test/dataset/test","test/testdataset/test.record")
+DatasetOperation.create_tf_record_file_for_coco_format("test/dataset/train.json","test/dataset/train","test/testdataset/train.record")
 
 
 
